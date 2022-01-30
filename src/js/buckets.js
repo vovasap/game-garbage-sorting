@@ -21,8 +21,9 @@ export default function addBuckets() {
     const bucketTop =  bucketClone.querySelector('.bucket__top')
     const bucketBase =  bucketClone.querySelector('.bucket__base')
 
-    bucketContainer.style.zIndex = 100 - index
+    bucketBase.style.zIndex = 100 - index
     bucketContainer.dataset.color = type.color
+    bucketTop.dataset.color = type.color
     bucketTop.setAttribute('src', `../assets/images/wastetop_${type.colorName}.jpg`)
     bucketTop.setAttribute('alt', `wastetop_${type.colorName}`)
     bucketBase.setAttribute('src', `../assets/images/wastebox_${type.colorName}.jpg`)

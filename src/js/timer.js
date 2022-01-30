@@ -1,7 +1,7 @@
 import { startGame, stopGame } from './game.js'
 
 const fullDasharray = 283
-const timeLimit = 6
+const timeLimit = 60
 let timePassed = 0
 let timeLeft = timeLimit
 let timerInterval = null
