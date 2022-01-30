@@ -1,7 +1,15 @@
+@import 'variables';
+
 .game {
   width: 500px;
   padding: 0 40px;
   border-radius: 40px;
   background: #fff;
   overflow: hidden;
+
+  @media (max-width: $mobile) {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
 }

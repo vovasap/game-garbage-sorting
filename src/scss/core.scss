@@ -1,6 +1,12 @@
 @import 'game';
 @import 'buckets';
+@import 'field';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
+  margin: 0;
   background: #aaa;
 }
