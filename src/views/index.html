@@ -4,8 +4,28 @@
     <meta charset="utf-8" />
     <title>Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script defer src="js/index.js"></script>
     <link href="css/main.css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <article class="game">
+      <div class="game__close"></div>
+      <div class="game__field field">
+        <div class="field__header"></div>
+        <div class="field__"></div>
+        <div class="field__buckets buckets">
+          <template id="bucket">
+            <div class="bucket__container">
+              <div class="bucket__label"></div>
+              <div class="bucket__display">
+                <img class="bucket__top">
+                <div class="bucket__outer-base">
+                  <img class="bucket__base">
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </article>
+  </body>
 </html>
