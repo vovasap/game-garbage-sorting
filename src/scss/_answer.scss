@@ -1,0 +1,27 @@
+.answer {
+  display: flex;
+  justify-content: space-around;
+  width: 80px;
+  padding: 10px;
+  border-radius: 26px;
+
+  &__counter {
+    color: #fff; 
+  }
+
+  &__icon {
+    height: 15px;
+  }
+
+  &_right {
+    background: green;
+  }
+
+  &_wrong {
+    order: 2;
+    background: red;
+
+    @media (max-width: $mobile) {
+      order: initial;
+    }
+  }

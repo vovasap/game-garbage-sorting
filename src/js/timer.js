@@ -1,5 +1,7 @@
+import { startGame, stopGame } from './game.js'
+
 const fullDasharray = 283
-const timeLimit = 60
+const timeLimit = 6
 let timePassed = 0
 let timeLeft = timeLimit
 let timerInterval = null
@@ -11,6 +13,8 @@ export default function startTimer() {
     startButton.classList.add('hidden')
   }
 
+  startGame()
+
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1
     timeLeft = timeLimit - timePassed
@@ -19,6 +23,7 @@ export default function startTimer() {
 
     if (timeLeft === 0) {
       onTimesUp()
+      stopGame()
     }
   }, 1000)
 }

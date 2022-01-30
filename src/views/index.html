@@ -13,26 +13,43 @@
         <div class="game__field field">
           <div class="field__header"></div>
           <div class="field__info info">
-            <div class="info__timer timer">
-              <svg class="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <g class="timer__circle">
-                  <path
-                    id="timer-path-remaining"
-                    stroke-dasharray="283"
-                    class="timer__path-remaining"
-                    d="
-                      M 50, 50
-                      m -45, 0
-                      a 45,45 0 1,0 90,0
-                      a 45,45 0 1,0 -90,0
-                    "
-                  ></path>
-                </g>
-              </svg>
-              <button class="timer__start-button">
-                Начать!
-              </button>
+            <div class="info__answer answer answer_right">
+              <img src="../assets/icons/ok.png" class="answer__icon" alt="ok">
+              <span class="answer__counter answer__counter_right">
+                0
+              </span>
             </div>
+            <div class="info__answer answer answer_wrong">
+              <img src="../assets/icons/no.png" class="answer__icon" alt="ok">
+              <span class="answer__counter answer__counter_wrong">
+                0
+              </span>
+            </div>
+            <div class="info__timer timer">
+              <div class="timer__inner">
+                <svg class="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <g class="timer__circle">
+                    <path
+                      id="timer-path-remaining"
+                      stroke-dasharray="283"
+                      class="timer__path-remaining"
+                      d="
+                        M 50, 50
+                        m -45, 0
+                        a 45,45 0 1,0 90,0
+                        a 45,45 0 1,0 -90,0
+                      "
+                    ></path>
+                  </g>
+                </svg>
+                <div class="timer__content">
+                  <button class="timer__start-button">
+                    Начать!
+                  </button>
+                  <div class="timer__garbage hidden"></div>
+                </div>
+              </div> 
+            </div>           
           </div>
           <div class="field__buckets buckets">
             <template id="bucket">

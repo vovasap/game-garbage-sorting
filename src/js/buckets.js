@@ -1,11 +1,11 @@
-export default function addBuckets() {
-  const bucketsTypes = [
-    { name: 'вторсырье', colorName: 'yellow', color: '#ffd204' },
-    { name: 'смешанные', colorName: 'green', color: '#8ec10f' },
-    { name: 'бытовые', colorName: 'blue', color: '#0363f2' },
-    { name: 'опасные', colorName: 'red', color: '#df2726' },
-  ]
+export const bucketsTypes = [
+  { name: 'вторсырье', colorName: 'yellow', color: '#ffd204' },
+  { name: 'смешанные', colorName: 'green', color: '#8ec10f' },
+  { name: 'бытовые', colorName: 'blue', color: '#0363f2' },
+  { name: 'опасные', colorName: 'red', color: '#df2726' },
+]
 
+export default function addBuckets() {
   const bucketsElement = document.querySelector('.buckets')
   const bucketTemplate = document.querySelector('#bucket')
 
@@ -22,6 +22,7 @@ export default function addBuckets() {
     const bucketBase =  bucketClone.querySelector('.bucket__base')
 
     bucketContainer.style.zIndex = 100 - index
+    bucketContainer.dataset.color = type.color
     bucketTop.setAttribute('src', `../assets/images/wastetop_${type.colorName}.jpg`)
     bucketTop.setAttribute('alt', `wastetop_${type.colorName}`)
     bucketBase.setAttribute('src', `../assets/images/wastebox_${type.colorName}.jpg`)
