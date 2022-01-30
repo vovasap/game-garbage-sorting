@@ -1,9 +1,11 @@
+import startTimer from './timer.js'
+
 function addBuckets() {
   const bucketsTypes = [
-    { name: 'вторсырье', color: 'yellow' },
-    { name: 'смешанные', color: 'green' },
-    { name: 'бытовые', color: 'blue' },
-    { name: 'опасные', color: 'red' },
+    { name: 'вторсырье', colorName: 'yellow', color: '#ffd204' },
+    { name: 'смешанные', colorName: 'green', color: '#8ec10f' },
+    { name: 'бытовые', colorName: 'blue', color: '#0363f2' },
+    { name: 'опасные', colorName: 'red', color: '#df2726' },
   ]
 
   const bucketsElement = document.querySelector('.buckets')
@@ -22,10 +24,10 @@ function addBuckets() {
     const bucketBase =  bucketClone.querySelector('.bucket__base')
 
     bucketContainer.style.zIndex = 100 - index
-    bucketTop.setAttribute('src', `../assets/images/wastetop_${type.color}.jpg`)
-    bucketTop.setAttribute('alt', `wastetop_${type.color}`)
-    bucketBase.setAttribute('src', `../assets/images/wastebox_${type.color}.jpg`)
-    bucketBase.setAttribute('alt', `wastebox_${type.color}`)
+    bucketTop.setAttribute('src', `../assets/images/wastetop_${type.colorName}.jpg`)
+    bucketTop.setAttribute('alt', `wastetop_${type.colorName}`)
+    bucketBase.setAttribute('src', `../assets/images/wastebox_${type.colorName}.jpg`)
+    bucketBase.setAttribute('alt', `wastebox_${type.colorName}`)
 
     bucketsElement.append(bucketClone)
   })
@@ -36,6 +38,8 @@ function init() {
   header.textContent = 'Выбери правильный бак для сортировки мусора!'
 
   addBuckets()
+
+  startTimer()
 }
 
 init()
