@@ -12,7 +12,28 @@
         <div class="game__close"></div>
         <div class="game__field field">
           <div class="field__header"></div>
-          <div class="field__"></div>
+          <div class="field__info info">
+            <div class="info__timer timer">
+              <svg class="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g class="timer__circle">
+                  <path
+                    id="timer-path-remaining"
+                    stroke-dasharray="283"
+                    class="timer__path-remaining"
+                    d="
+                      M 50, 50
+                      m -45, 0
+                      a 45,45 0 1,0 90,0
+                      a 45,45 0 1,0 -90,0
+                    "
+                  ></path>
+                </g>
+              </svg>
+              <button class="timer__start-button">
+                Начать!
+              </button>
+            </div>
+          </div>
           <div class="field__buckets buckets">
             <template id="bucket">
               <div class="bucket__container">

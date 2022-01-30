@@ -1,0 +1,40 @@
+.timer {
+  position: relative;
+  max-width: 150px;
+  margin: auto;
+
+  &__circle {
+    fill: none;
+    stroke: none;
+  }
+
+  &__start-button {
+    fill: #d7acf4;
+  }
+
+  &__path-remaining {
+    stroke-width: 10px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: #d7acf4;
+  }
+
+  &__start-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    font-size: 34px;
+    background: #d7acf4;
+    cursor: pointer;
+  }
+}

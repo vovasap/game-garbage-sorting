@@ -39,7 +39,9 @@ function init() {
 
   addBuckets()
 
-  startTimer()
+  const startButton = document.querySelector('.timer__start-button')
+  
+  startButton.addEventListener('click', startTimer)
 }
 
 init()
