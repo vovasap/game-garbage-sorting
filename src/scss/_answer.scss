@@ -6,7 +6,7 @@
   border-radius: 26px;
 
   &__counter {
-    color: #fff; 
+    color: $fontColor; 
   }
 
   &__icon {
@@ -14,13 +14,13 @@
   }
 
   &_right {
-    background: green;
+    background: $success;
   }
 
   &_wrong {
     order: 2;
     margin-left: 10px;
-    background: red;
+    background: $danger;
 
     @media (max-width: $mobile) {
       order: initial;

@@ -1,5 +1,3 @@
-@import 'variables';
-
 .buckets {
   display: grid;
   grid-template-columns: repeat(4, 25%);
@@ -27,8 +25,8 @@
     margin: 0 50% 5px;
     transform: translateX(-50%);
     border-radius: 10px;
-    color: #fff;
-    background: red;
+    color: $fontColor;
+    background: $danger;
 
       @media (max-width: $mobile) {
       transform: rotate(-50deg) translateX(calc(-50% + 30px)) translateY(-45px);

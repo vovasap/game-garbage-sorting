@@ -16,7 +16,8 @@
   }
 
   &__start-button {
-    fill: #d7acf4;
+    fill: $accent;
+    color: $fontColor;
   }
 
   &__path-remaining {
@@ -26,7 +27,7 @@
     transform-origin: center;
     transition: 1s linear all;
     fill-rule: nonzero;
-    stroke: #d7acf4;
+    stroke: $accent;
   }
 
   &__start-button {
@@ -35,7 +36,7 @@
     border-radius: 50%;
     border: none;
     font-size: 34px;
-    background: #d7acf4;
+    background: $accent;
     cursor: pointer;
   }
 
@@ -73,7 +74,7 @@
       border-radius: 50%;
       width: 50px;
       height: 50px;
-      background: green url('../assets/icons/ok.png') 50% no-repeat;
+      background: $success url('../assets/icons/ok.png') 50% no-repeat;
     }
 
     &.wrong {
@@ -81,7 +82,7 @@
       border-radius: 50%;
       width: 50px;
       height: 50px;
-      background: red url('../assets/icons/no.png') 50% no-repeat;
+      background: $danger url('../assets/icons/no.png') 50% no-repeat;
     }
   }
 }

@@ -9,10 +9,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 150px;
+    height: 200px;
     
     @media (max-width: $mobile) { 
       justify-content: space-around;
     }
+  }
+
+  &__header {
+    margin-top: 15px;
+    text-align: center;
   }
 }
