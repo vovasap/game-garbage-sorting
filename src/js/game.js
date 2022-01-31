@@ -9,13 +9,14 @@ const resultElement = document.querySelector('.timer__result')
 const playAgainElement = document.querySelector('.info__play-again')
 const timerElement = document.querySelector('.info__timer')
 const fieldInfo = document.querySelector('.field__info')
+const headerElement = document.querySelector('.field__header')
 let garbageCoordX = 0
 let garbageCoordY = 0
 let buckets = []
 let colors = []
 let currentColor
-let rigthAnswer = 0
-let wrongAnswer = 0
+let rigthAnswerCounter = 0
+let wrongAnswerCounter = 0
 let isRightAnswer = true
 let isBusy = false
 const animationDuration = 700
@@ -55,16 +56,19 @@ export function stopGame() {
   fieldInfo.style.justifyContent = 'center'
   timerElement.classList.add('hidden')
   playAgainElement.classList.remove('hidden')
+
+  headerElement.textContent = `Отлично! Ты набрал ${rigthAnswerCounter} очков из ${rigthAnswerCounter + wrongAnswerCounter}!`
 }
 
 function startNewGame() {
   playAgainElement.classList.add('hidden')
   timerElement.classList.remove('hidden')
   fieldInfo.style.justifyContent = 'space-between'
-  rigthAnswer = 0
-  wrongAnswer = 0
-  rightCounter.textContent = rigthAnswer
-  wrongCounter.textContent = wrongAnswer
+  rigthAnswerCounter = 0
+  wrongAnswerCounter = 0
+  rightCounter.textContent = rigthAnswerCounter
+  wrongCounter.textContent = wrongAnswerCounter
+  headerElement.textContent = 'Выбери правильный бак для сортировки мусора!'
   startGame()
   startTimer()
 }
@@ -93,12 +97,12 @@ function checkSelection(e) {
   garbageShadow.classList.remove('hidden')
 
   if (bucket.dataset.color === currentColor) {
-    rigthAnswer += 1
-    rightCounter.textContent = rigthAnswer
+    rigthAnswerCounter += 1
+    rightCounter.textContent = rigthAnswerCounter
     isRightAnswer = true
   } else {
-    wrongAnswer += 1
-    wrongCounter.textContent = wrongAnswer
+    wrongAnswerCounter += 1
+    wrongCounter.textContent = wrongAnswerCounter
     isRightAnswer = false
   }
   const [ bucketTopCoordX, bucketTopCoordY ] = getCoords(bucketTop)
