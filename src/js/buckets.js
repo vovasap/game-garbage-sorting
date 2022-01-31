@@ -21,6 +21,7 @@ export default function addBuckets() {
     const bucketTop =  bucketClone.querySelector('.bucket__top')
     const bucketBase =  bucketClone.querySelector('.bucket__base')
 
+    bucketTop.style.zIndex = 50 - index
     bucketBase.style.zIndex = 100 - index
     bucketContainer.dataset.color = type.color
     bucketTop.dataset.color = type.color
