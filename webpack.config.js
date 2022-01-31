@@ -31,7 +31,7 @@ module.exports = {
       filename: 'css/[name].css',
     }),
     new HtmlWebpackPlugin({
-      template: 'src/views/index.html',
+      template: 'src/index.html',
     }),
   ],
   devServer: {

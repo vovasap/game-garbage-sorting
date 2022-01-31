@@ -25,9 +25,9 @@ export default function addBuckets() {
     bucketBase.style.zIndex = 100 - index
     bucketContainer.dataset.color = type.color
     bucketTop.dataset.color = type.color
-    bucketTop.setAttribute('src', `../assets/images/wastetop_${type.colorName}.jpg`)
+    bucketTop.setAttribute('src', `./assets/images/wastetop_${type.colorName}.jpg`)
     bucketTop.setAttribute('alt', `wastetop_${type.colorName}`)
-    bucketBase.setAttribute('src', `../assets/images/wastebox_${type.colorName}.jpg`)
+    bucketBase.setAttribute('src', `./assets/images/wastebox_${type.colorName}.jpg`)
     bucketBase.setAttribute('alt', `wastebox_${type.colorName}`)
 
     bucketsElement.append(bucketClone)
