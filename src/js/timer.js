@@ -24,6 +24,9 @@ export default function startTimer() {
     if (timeLeft === 0) {
       onTimesUp()
       stopGame()
+      timePassed = 0
+      timeLeft = timeLimit
+      setCircleDasharray()
     }
   }, 1000)
 }

@@ -19,6 +19,7 @@
 
   &_wrong {
     order: 2;
+    margin-left: 10px;
     background: red;
 
     @media (max-width: $mobile) {

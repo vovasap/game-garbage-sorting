@@ -1,10 +1,14 @@
 import { bucketsTypes } from './buckets.js'
+import startTimer from './timer.js'
 
 const rightCounter = document.querySelector('.answer__counter_right')
 const wrongCounter = document.querySelector('.answer__counter_wrong')
 const garbage = document.querySelector('.timer__garbage')
 const garbageShadow = document.querySelector('.timer__garbage-shadow')
 const resultElement = document.querySelector('.timer__result')
+const playAgainElement = document.querySelector('.info__play-again')
+const timerElement = document.querySelector('.info__timer')
+const fieldInfo = document.querySelector('.field__info')
 let garbageCoordX = 0
 let garbageCoordY = 0
 let buckets = []
@@ -27,6 +31,7 @@ export function startGame() {
     bucket.style.cursor = 'pointer'
     bucket.addEventListener('click', checkSelection)
   })
+  playAgainElement.addEventListener('click', startNewGame)
 
   addGarbage()
   const [ x, y ] = getCoords(garbage)
@@ -41,9 +46,27 @@ export function stopGame() {
     bucket.style.cursor = 'auto'
     bucket.removeEventListener('click', checkSelection)
   })
+  playAgainElement.removeEventListener('click', startGame)
+
   garbage.classList.add('hidden')
   garbageShadow.classList.add('hidden')
   resultElement.classList.add('hidden')
+
+  fieldInfo.style.justifyContent = 'center'
+  timerElement.classList.add('hidden')
+  playAgainElement.classList.remove('hidden')
+}
+
+function startNewGame() {
+  playAgainElement.classList.add('hidden')
+  timerElement.classList.remove('hidden')
+  fieldInfo.style.justifyContent = 'space-between'
+  rigthAnswer = 0
+  wrongAnswer = 0
+  rightCounter.textContent = rigthAnswer
+  wrongCounter.textContent = wrongAnswer
+  startGame()
+  startTimer()
 }
 
 function addGarbage() {
